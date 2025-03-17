@@ -437,7 +437,7 @@ $ touch .ssh/authorized_keys # сюда нужно прописать .pub кл�
 PubkeyAuthentication yes
 PasswordAuthentication no
 AuthorizedKeysFile .ssh/authorized_keys
-и можно закомментировать PermitRootLogin
+PermitRootLogin no
 
 Затем `systemctl restart sshd.service`.
 Теперь при подключении к серверу будет требовать пароль ssh ключа
@@ -465,6 +465,9 @@ ssh_config - ssh-клиент
 
 Выполнить команду на сервере (перед выходом из SSH сессии)
 $ nohup ./script.sh >/dev/null &
+
+Для вывода всех параметров конфигурации SSH-сервера:
+$ sshd -T
 
 
 --- Что такое fingerprint
