@@ -570,8 +570,8 @@ $ ulimit -c unlimited
 
 Если нет `sysctl.conf` файла, то можно создать:
 kernel.core_pattern = /tmp/core-%e-%s-%u-%g-%p-%t
-fs.suid_dumpable = 2
 kernel.core_uses_pid = 1
+fs.suid_dumpable = 2
 
 Так же можно обратиться к: `/etc/sysctl.conf` для проверки, куда будет
 происходить сохранение. Чтобы применить изменения файла `sysctl.conf` можно
