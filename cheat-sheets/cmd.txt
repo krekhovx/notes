@@ -67,7 +67,7 @@ $ man 3 stdio
 $ man -k [a-z] | grep '(2)' | grep 'change'
 
 Если man не ищется:
-$ sudo mandb
+$ sudo mandb # создаст /var/cache/man/* файлы
 
 
 --- sudo
