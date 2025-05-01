@@ -282,6 +282,7 @@ $ grep -- "---"                            # греп черточек
 $ grep -o user /etc/passwd                 # выводит не все строки, а только совпадения
 $ grep -rl 'pattern'                       # показывает файлы в которых нашелся паттерн
 $ grep -B1 '1 fuzzy tranlsation.$' <file>  # грепнуть паттерн + вывести строку выше
+$ grep -r --exclude-dir="debian" "yes"     # грепнуть всё рекурсивно, кроме директории debian
 
 find:
 $ find . -name "file"                              # найти по имени file
