@@ -1105,6 +1105,7 @@ Open Source основывается на принципах прозрачно�
 или решение:
 $ how-can-i-help
 $ how-can-i-help -o
+$ how-can-i-help -o -s newcomer
 
 Список критичных багов:
 https://bugs.debian.org/release-critical/

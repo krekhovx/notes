@@ -16,7 +16,6 @@
 * Backporting packages
 * Основные пакеты для сопровождающего
 * dpkg -i *.deb и зависимости
-* Lintian ошибки
 * Где брать готовые бинарные пакеты
 * piuparts
 * debian/rules with verbose
@@ -25,6 +24,7 @@
 * hardening-check
 * fzf, fzy, ripgrep
 * udeb и dbgsym пакеты
+* lintian и lintian-brush
 
 
 --- Репозиторий
@@ -856,70 +856,6 @@ Depends/Recommends и подобные, не устанавливаются ав
 $ apt install <pkg>
 
 
---- Lintian ошибки
-- national-encoding
-используется кодировка, отличная от стандартной UTF-8, надо использовать `iconv`.
-
-- groff-message
-все сообщения и документация, которые могут использовать `groff`, соответствуют
-стандартам форматирования?
-
-- redundant-installation-prerequisite
-избыточные зависимости, записи, смотреть `debian/control`.
-
-- newer-standards-version
-версия стандарта, указанная в `debian/control`, новее той, которую текущая
-версия Lintian умеет проверять.
-
-- patch-file-present-but-not-mentioned-in-series
-<file>.patch существует, но в `patches/series` не прописан, лучше прописать,
-даже если не нужен (указать комментарий перед началом ненужного патча).
-
-- unusual-interpreter /usr/bin/python [usr/lib/mc/extfs.d/s3+]
-в пакете используется интерпретатор `/usr/bin/python`, который отсутствует в
-системе.
-
-- uses-dpkg-database-directly [usr/lib/mc/extfs.d/apt+]
-скрипт напрямую обращается к внутренней базе данных `dpkg` (это может привести к
-нестабильной работе системы), вместо этого лучше использовать официальные
-источники `dpkg-query`, `apt-cache`, `apt-get`, и другие.
-
-- debian-watch-uses-insecure-uri [debian/watch]
-в `debian/watch` файле используется небезопасный URI адрес, пакеты хранятся на
-небезопасном сервере, желательно изменить на HTTPS.
-
-- older-debian-watch-file-standard 3 [debian/watch]
-в `debian/watch` можно поднять версию с 3 до 4 (например), это даст более лучшу
-функциональность.
-
-- patch-not-forwarded-upstream [debian/patches/file.patch]
-в патче поле Forwarded заполнено не `not-needed`, желательно указать `no` или
-`not-needed`.
-
-`no` -> пересылка в upstream пока что не сделана
-`not-needed` -> не требуется, патч только для Debian
-`yes` -> сделано
-
-- Если присутствует поле "Bug" (указывающее на ошибку), то подразумевается, что
-  патч был отправлен разработчикам исходного проекта, даже если поле "Forwarded"
-  не указано.
-- Если поле "Bug" отсутствует, то подразумевается, что патч не был отправлен
-  разработчикам исходного проекта.
-
-- debian-news-entry-has-unknown-version [usr/share/doc/mc/NEWS.Debian.gz]
-https://bugs-devel.debian.org/cgi-bin/bugreport.cgi?bug=1021607
-или действительно не совпадает с `debian/changelog`.
-
-- hardening-no-bindnow usr/sbin/icmpinfo
-в `debian/rules` необходимо добавить `export DEB_BUILD_MAINT_OPTIONS = hardening=+all`.
-
-- hardening-no-relro usr/sbin/icmpinfo
-потеряли в `debian/rules` (-Wl,-z,relro)
-
-В целом hardening-* сообщения связаны с безопасностью флагов и можно
-экспортировать `dpkg-buildflags` и проанализировать вывод `blhc`.
-
-
 --- Где брать готовые бинарные пакеты
 Можно использовать:
 $ apt-get download <pack>
@@ -1158,3 +1094,17 @@ Dbgsym пакеты - это специальные пакеты, содержа
 разработчикам и системным администраторам получить более подробную информацию об
 ошибках и сбоях, сохраняя основную систему без отладочной информации для
 экономии места.
+
+
+--- lintian и lintian-brush
+lintian — это инструмент для проверки Debian-пакетов на соответствие стандартам
+Debian (policy) и на наличие типичных ошибок. Он анализирует пакет и выдаёт
+предупреждения, ошибки и рекомендации.
+
+lintian-brush — это утилита, которая автоматически исправляет некоторые
+замечания lintian и приводит исходники и packaging-каталоги к более современным
+стандартам (обновляет `debian/control`, `copyright`, `metadata` и т.д.).
+
+Для чего нужны:
+- Помогают делать Debian-пакеты более качественными и соответствующими правилам.
+- lintian — для проверки, lintian-brush — для автоматического исправления части проблем.
