@@ -476,7 +476,7 @@ $ scp -r path/to/dir .
 той же информации при обновлении или переустановке пакетов.
 
 Например, во время установки данного пакета будут задаваться вопросы (это работает `debconf`):
-$ sudo apt-get install postfix
+$ apt-get install postfix
 
 Повторно запустить конфигурацию пакета, откроется `debconf`:
 $ sudo dpkg-reconfigure tzdata
@@ -490,7 +490,7 @@ $ debconf-show console-setup
 Можно перед установкой пакета подготовить необходимую конфигурацию:
 $ echo "package_name  package_template  select  value" > preseed.txt
 $ sudo debconf-set-selections < preseed.txt
-$ sudo apt-get install package_name -y
+$ apt-get install package_name -y
 
 Для изменения настроек:
 $ echo "package_name  package_template  select  new_value" > new-selections.txt
@@ -614,7 +614,7 @@ $ eatmydata apt-get install <a lot of packages>
 систему. Например, пакет `neofetch` (который вместе с ним устанавливает `w3m`,
 `w3m-img` и подобные), хотя без этих пакетов он так же отлично работает.
 Можно использовать опцию:
-$ sudo apt-get install neofetch --no-install-recommends
+$ apt-get install neofetch --no-install-recommends
 
 А можно создать конфигурационный файл `/etc/apt/apt.conf.d/99_norecommends` и прописать:
 APT::Install-Recommends "false";
@@ -622,7 +622,7 @@ APT::AutoRemove::RecommendsImportant "false";
 APT::AutoRemove::SuggestsImportant "false";
 
 Установить Suggests можно так:
-$ sudo apt-get install <pkg> --install-suggests
+$ apt-get install <pkg> --install-suggests
 
 
 --- debian/rules по умолчанию
@@ -833,7 +833,7 @@ $ apt-get purge <pack>
 * установите новый пакет
 
 * удалите его
-$ sudo apt-get remove <pack>
+$ apt-get remove <pack>
 
 * установите опять
 

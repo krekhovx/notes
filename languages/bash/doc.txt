@@ -620,7 +620,7 @@ export TMOUT=60
 
 
 --- shellcheck
-$ apt install shellcheck
+$ apt-get install shellcheck
 $ shellcheck ./script.sh
 
 ShellCheck — это статический анализатор скриптов на языке shell (bash, sh и

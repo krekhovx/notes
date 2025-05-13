@@ -910,7 +910,7 @@ Rolling Release модель подходит для пользователей,
 
 
 --- calamares
-$ apt install calamares calamares-settings-debian
+$ apt-get install calamares calamares-settings-debian
 
 Calamares — это модульный установщик операционной системы, который используется
 многими дистрибутивами Linux для упрощения процесса установки. Он разработан с
