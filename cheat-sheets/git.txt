@@ -40,6 +40,7 @@
 * origin master и --set-upstream origin master
 * Подписание тегов и коммитов
 * Перезалить готовый репозиторий
+* Добавить пустую папку
 
 
 --- Описание
@@ -665,3 +666,14 @@ $ cd old
 $ git remote set-url origin https://salsa.debian.org/example/new.git
 $ git push --set-upstream origin --all
 $ git push --set-upstream origin --tags
+
+
+--- Добавить пустую папку
+Git по умолчанию не отслеживает пустые папки.
+
+Чтобы добавить пустую папку:
+$ touch vi5ybiro.default/.gitkeep
+$ git add vi5ybiro.default/.gitkeep
+$ git commit -m "add empty vi5ybiro.default folder"
+
+Так git будет сохранять эту папку через наличие файла.
