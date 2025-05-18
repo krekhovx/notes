@@ -672,8 +672,8 @@ $ git push --set-upstream origin --tags
 Git по умолчанию не отслеживает пустые папки.
 
 Чтобы добавить пустую папку:
-$ touch vi5ybiro.default/.gitkeep
-$ git add vi5ybiro.default/.gitkeep
-$ git commit -m "add empty vi5ybiro.default folder"
+$ touch dir/.gitkeep
+$ git add dir/
+$ git commit -m "add empty 'dir' folder"
 
 Так git будет сохранять эту папку через наличие файла.
