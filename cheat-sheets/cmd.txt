@@ -268,21 +268,21 @@ $ sed -i "s/hello/new/" passwd                               # заменить 
 $ cat /etc/passwd | sed -n 2p                                # получить вторую строку
 
 grep:
-$ ps aux | grep nginx                      # нечисто
-$ ps aux | grep '[n]ginx'                  # вывод конкретного процесса
+$ ps aux | grep nginx                      # покажет все строки с nginx, включая сам grep
+$ ps aux | grep '[n]ginx'                  # только процессы nginx, без самой команды grep
 $ grep -i "user" <file>                    # не учитывать регистр, искать USER и user
-$ grep "[0-9]" <file>                      # найдем строки только с цифрами
+$ grep "[0-9]" <file>                      # grep строк с цифрами
 $ grep -r "hello" <dir>                    # рекурсивный поиск слова hello
 $ grep -n "user" /etc/passwd               # номер строки совпадения
 $ grep --color                             # добавляет цвета в вывод
-$ grep -E "user|root" passwd               # грепнуть user и root паттерны
-$ grep "bash$" /etc/passwd                 # найти строки, которые заканчиваются bash
-$ grep -r --include="*.c" "yes"            # грепать только в Си файлах
-$ grep -- "---"                            # греп черточек
+$ grep -E "user|root" passwd               # grep user и root паттерны
+$ grep "bash$" /etc/passwd                 # grep строк, которые заканчиваются bash
+$ grep -r --include="*.c" "yes"            # grep только в Си файлах
+$ grep -- "--bashrc"                       # grep поиска строк с двойным дефисом
 $ grep -o user /etc/passwd                 # выводит не все строки, а только совпадения
 $ grep -rl 'pattern'                       # показывает файлы в которых нашелся паттерн
-$ grep -B1 '1 fuzzy tranlsation.$' <file>  # грепнуть паттерн + вывести строку выше
-$ grep -r --exclude-dir="debian" "yes"     # грепнуть всё рекурсивно, кроме директории debian
+$ grep -B1 '1 fuzzy tranlsation.$' <file>  # grep паттерн + вывести строку выше
+$ grep -r --exclude-dir="debian" "yes"     # grep рекурсивно, исключая папку debian
 
 find:
 $ find . -name "file"                              # найти по имени file
