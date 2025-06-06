@@ -1,4 +1,6 @@
 .
+├── channel-logo.png
+├── channel-logo-transparent.png
 ├── cheat-sheets
 │   ├── cmd.txt
 │   ├── debian
@@ -225,4 +227,4 @@
 ├── README
 └── README.md
 
-41 directories, 185 files
+41 directories, 187 files
