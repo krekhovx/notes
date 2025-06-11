@@ -321,6 +321,9 @@ $ git push origin v1.0
 $ git push origin --tags
 Отправка всех тегов
 
+$ git push origin --all
+Отправка всех веток
+
 Создание легковесного / привязка к коммиту:
 $ git tag v1.1
 $ git push origin v1.1
