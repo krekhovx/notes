@@ -403,8 +403,8 @@ $ apt-get install at --no-install-recommends
 $ apt-get install --download-only <pack>  # без установки
 $ apt-get source --compile <pack>         # скачать + скомпилировать, но не подтягивает Build-Depends
 $ apt-get install <pack> <pack>-          # установить пакет и одновременно удалить еще пакет
-$ apt-get --purge remove <pack> <pack>+   # удалит и установит curl одновременно
-$ apt-get --reinstall install <pack>      # переустановить пакет
+$ apt-get remove --purge <pack> <pack>+   # удалит и установит curl одновременно
+$ apt-get install --reinstall <pack>      # переустановить пакет
 $ apt-get install <pack>/unstable         # установить пакет из ветки unstable
 $ apt-get remove <pack>                   # удаление пакета + зависимостей, но оставит в системе настроечные файлы
                                           # при удалении пакета Debian конфигурационные файлы сохраняются
