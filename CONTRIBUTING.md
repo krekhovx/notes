@@ -36,7 +36,7 @@ set textwidth=80
 
 # Участие
 
-Если вы хотите внести свой вклад в [notes](https://github.com/krekhovx/krxnotes),
+Если вы хотите внести свой вклад в [krxnotes](https://github.com/krekhovx/krxnotes),
 пожалуйста, следуйте этим простым правилам:
 
 1. Сделайте [Fork](https://github.com/krekhovx/krxnotes) проекта.
@@ -44,7 +44,7 @@ set textwidth=80
 2. Склонируйте репозиторий из вашего аккаунта с помощью команды:
 
     ```
-    $ git clone git@github.com:<username>/notes.git
+    $ git clone git@github.com:<username>/krxnotes.git
     ```
 
 3. Создайте новую ветку:
