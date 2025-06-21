@@ -43,6 +43,11 @@ linux/
 cheat-sheets/
 ```
 
+Книги:
+```
+books/
+```
+
 Смотреть дерево файлов: [README](https://github.com/krekhovx/krxnotes/blob/master/README).
 
 ## Оглавление

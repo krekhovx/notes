@@ -1,4 +1,12 @@
 .
+├── books
+│   ├── Внутреннее устройство Linux.pdf
+│   ├── Керниган. Язык программирования Си.pdf
+│   ├── Командная строка Linux.pdf
+│   ├── Руководство по созданию пакетов Debian.pdf
+│   ├── Сценарии командной оболочки.pdf
+│   ├── Теоретический минимум по Computer Science-1.pdf
+│   └── Теоретический минимум по Computer Science-2.pdf
 ├── channel-logo.png
 ├── channel-logo-transparent.png
 ├── cheat-sheets
@@ -227,4 +235,4 @@
 ├── README
 └── README.md
 
-41 directories, 187 files
+42 directories, 194 files
