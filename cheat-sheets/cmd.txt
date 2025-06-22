@@ -868,6 +868,13 @@ $ pwd # print working directory
 /home/user/Downloads
 
 
+--- readlink
+Показывает путь, на который указывает символическая ссылка.
+
+$ readlink /sys/devices/power/subsystem
+../../bus/event_source
+
+
 --- tac
 Выводит содержимое файла в обратном порядке строк, то есть начиная с последней
 строки и заканчивая первой:
