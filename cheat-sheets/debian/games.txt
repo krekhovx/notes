@@ -59,4 +59,10 @@ deb-пакет, и игра появится меню приложений и б
 другой совместимый слой).
 
 $ play.it setup_game.exe
-$ dpkg -i game.deb
+$ apt-get install -y game.deb
+
+# список поддерживаемых игр и опций
+$ play.it --list-available-scripts
+
+# скрипты для игр хранятся:
+/usr/share/games/play.it/

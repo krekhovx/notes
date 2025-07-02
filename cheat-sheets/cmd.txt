@@ -8,7 +8,8 @@
 * ISO
 * Процессы в фоновом режиме
 * Полезные команды и трюки
-* apt и dpkg
+* apt-get, apt и dpkg
+* dpkg (architecture)
 * Журналы dmesg и journalctl
 * strace
 * indent форматирование и выравнивание
@@ -458,6 +459,34 @@ $ dpkg --configure <path_to_deb>          # настраивает пакет
 # dpkg хранит журнал в `/var/log/dpkg.log`.
 # `/var/lib/dpkg/status` хранит информацию о пакетах.
 # `/var/lib/dpkg/info` хранит различные скрипты, файлы пакетов.
+
+
+--- dpkg (architecture)
+$ dpkg --print-architecture # основная архитектура
+$ dpkg --print-foreign-architectures # дополнительные архитектуры
+
+# добавить 32 битную архитектуру (например, для wine)
+$ dpkg --add-architecture i386
+$ apt-get update
+
+# удалить 32 битную архитектуру (если в системе нет установленных 32 битных пакетов)
+$ dpkg --remove-architecture i386
+$ apt-get update
+
+Удалить архитектуру i386 можно только после удаления всех установленных
+i386-пакетов:
+
+# проверить наличие
+$ dpkg --list | grep i386
+
+# если есть — удалить
+$ apt-get remove <pkg>:i386
+
+# после этого убрать архитектуру
+$ dpkg --remove-architecture i386
+
+По умолчанию пакеты устанавливаются для amd64, если явно не указана i386 или нет
+зависимости от 32-битного пакета.
 
 
 --- Журналы dmesg и journalctl
