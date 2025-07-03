@@ -377,6 +377,11 @@ Control: owner -1 Kirill Rekhov <krekhov.dev@gmail.com>
 Тема: #1092159
 Closing this RFP: this package is already in sid.
 
+Когда идет обсуждение/переписка с другими участниками бага, можно ставить:
+Копия: 1092159-submitter@bugs.debian.org
+
+Чтобы переписка сохранялась в публичный Debian архив.
+
 
 --- Шаблон письма при отправке патчей/изменений
 Мне нравится этот шаблон.
